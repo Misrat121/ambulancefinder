@@ -14,19 +14,33 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="{{route('category.list')}}">
+              <span data-feather="file"></span>
+              Category
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('stations.list')}}">
+              <span data-feather="file"></span>
+              Stations
+            </a>
+          </li>
+          
+          
+          <li class="nav-item">
             <a class="nav-link" href="#">
               <span data-feather="shopping-cart"></span>
               Manage Query
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('registereduser.create')}}">
+            <a class="nav-link" href="{{route('registeredusers.list')}}">
               <span data-feather="shopping-cart"></span>
               Registered Users
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('registereddriver.create')}}">
+            <a class="nav-link" href="{{route('registereddrivers.list')}}">
               <span data-feather="users"></span>
               Registered Drivers
             </a>
@@ -38,11 +52,11 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="{{route('updateinfo.update')}}">
               <span data-feather="bar-chart-2"></span>
               Update Contact Info
             </a>
           </li>
                   </ul>
       </div>
-    </nav>
+</nav>

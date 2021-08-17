@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRegisteredDriversTable extends Migration
+class CreateRegistereddriverTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateRegisteredDriversTable extends Migration
      */
     public function up()
     {
-        Schema::create('registered_drivers', function (Blueprint $table) {
+        Schema::create('registereddriver', function (Blueprint $table) {
             $table->id();
             $table->string('name',100);
-            $table->text('details')->nullable();
+            $table->string('license number',11);
+            $table->string('phone number',11);
             $table->string('image')->nullable();
             $table->string('status',10)->default('active');
             $table->timestamps();
@@ -30,6 +31,6 @@ class CreateRegisteredDriversTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registered_drivers');
+        Schema::dropIfExists('registereddriver');
     }
 }

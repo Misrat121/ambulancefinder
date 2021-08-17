@@ -2,5 +2,5 @@
 
 
 @section('content')
-<h1>Contact</h1>
+<h1>Update Information</h1>
 @endsection

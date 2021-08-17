@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class RegisteredUserController extends Controller
 {
-    public function registereduser()
+    public function list()
     {
-        return view('backend.layouts.registereduser');
+        return view('backend.layouts.registeredusers.list');
     }
 }

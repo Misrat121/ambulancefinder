@@ -19,7 +19,19 @@
         <th scope="col">Address</th>
     </tr>
     </thead>
-   
+    <tbody>
+ 
+    @foreach($registereddrivers as $registereddriver)
+    <tr>
+        <th scope="row">{{$registereddriver->id}}</th>
+        <td>{{$registereddriver->name}}</td>
+        <td>{{$registereddriver->license_number}}</td>
+        <td>{{$registereddriver->phone_number}}</td>
+        <td>{{$registereddriver->address}}</td>
+
+    </tr>
+@endforeach
+    </tbody>
 </table>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,6 +46,8 @@
                 </button>
             </div>
             <div class="modal-body">
+            <form action="{{route('registereddrivers.store')}}" method="POST"> 
+        @csrf
             
                 <form>
                     <div class="form-group">

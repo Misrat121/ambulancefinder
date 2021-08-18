@@ -5,7 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RegisteredUsers extends Model
+class RegisteredDriver extends Model
 {
     use HasFactory;
+    protected $guarded=[];
+    protected $table="registereddrivers";
 }

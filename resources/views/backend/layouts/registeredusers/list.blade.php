@@ -1,11 +1,11 @@
 @extends('backend.master')
 @section('content')
-<h1>Registereddriver List</h1>
+<h1>Registereduser List</h1>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
     <i class="bi bi-alarm"></i>
-    Create New Driver
+    Create New user
 </button>
 
 
@@ -33,6 +33,8 @@
                 </button>
             </div>
             <div class="modal-body">
+            <form action="{{route('registeredusers.store')}}" method="POST"> 
+        @csrf
             
                 <form>
                     <div class="form-group">

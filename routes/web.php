@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class,'home']);
 
 Route::get('/ambulances',[AmbulanceController::class,'list'])->name('ambulances.list');
-Route::get('/ambulances/create',[AmbulanceController::class,'create'])->name('ambulances.create');
+Route::post('/ambulances/store',[AmbulanceController::class,'store'])->name('ambulances.store');
 
 Route::get('/category/list',[CategoryController::class,'list'])->name('category.list');
 
@@ -31,8 +31,10 @@ Route::get('/stations/list',[StationsController::class,'list'])->name('stations.
 
 
 Route::get('/registereddrivers',[RegisteredDriverController::class,'list'])->name('registereddrivers.list');
+Route::post('/registereddrivers/store',[RegisteredDriverController::class,'store'])->name('registereddrivers.store');
 
 Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
+Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
 
 Route::get('/requests/manage',[RequestsController::class,'manage'])->name('requests.manage');
 

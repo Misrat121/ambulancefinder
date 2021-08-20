@@ -15,6 +15,8 @@
         <th scope="col">#</th>
         <th scope="col">Type</th>
         <th scope="col">Ambulance Number</th>
+        <th scope="col">Driver Name</th>
+        <th scope="col">Phone Number</th>
         
     </tr>
     </thead>
@@ -25,7 +27,9 @@
     <tr>
         <th scope="row">{{$ambulance->id}}</th>
         <td>{{$ambulance->type}}</td>
-        <td>{{$ambulance->number}}</td>
+        <td>{{$ambulance->ambulance_number}}</td>
+        <td>{{$ambulance->driver_name}}</td>
+        <td>{{$ambulance->phone_number}}</td>
 
     </tr>
 @endforeach
@@ -62,8 +66,12 @@
                         <input name="ambulance_number" type="text" class="form-control" id="ambulance_number" placeholder="Enter Ambulance Number">
                     </div>
                     <div class="form-group">
+                        <label for="driver_name">Driver Name</label>
+                        <input name="driver_name" type="text" class="form-control" id="driver_name" placeholder="Enter Driver Name">
+                    </div>
+                    <div class="form-group">
                         <label for="phone_number">Phone Number</label>
-                        <input name="phone_number" type="text" class="form-control" id="phonee_number" placeholder="Enter Phone Number">
+                        <input name="phone_number" type="text" class="form-control" id="phone_number" placeholder="Enter Phone Number">
                     </div>
         
                     

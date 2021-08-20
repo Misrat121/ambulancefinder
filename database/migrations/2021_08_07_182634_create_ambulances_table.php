@@ -16,7 +16,9 @@ class CreateAmbulancesTable extends Migration
         Schema::create('ambulances', function (Blueprint $table) {
             $table->id();
             $table->string('type',100);
-            $table->string('number',100);
+            $table->string('ambulance_number',100);
+            $table->string('driver_name',100);
+            $table->string('phone_number',11);
             
             $table->string('status',10)->default('active');
             $table->timestamps();

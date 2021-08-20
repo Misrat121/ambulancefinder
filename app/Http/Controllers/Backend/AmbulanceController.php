@@ -17,9 +17,11 @@ class AmbulanceController extends Controller
     {
        Ambulance::create([
            'type'=>$request->ambulance_type,
-           
-           'number'=>$request->ambulance_number
-       ]);
+           'ambulance_number'=>$request->ambulance_number,
+            'driver_name'=>$request->driver_name,
+            'phone_number'=>$request->phone_number,
+
+     ]);
    
        return redirect()->back();
     

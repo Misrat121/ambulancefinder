@@ -15,14 +15,13 @@ class CreateAmbulancesTable extends Migration
     {
         Schema::create('ambulances', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
+            $table->string('owner_name',100);
             $table->string('contact_number',11);
             $table->string('owner_address',50);
             $table->string('vehicle_number',50);
             $table->string('type',50)->nullable();
             $table->string('oxygen',50)->nullable();
             $table->string('icu',50)->nullable();
-            
             $table->string('location',50);
             $table->string('driver_name',50);
             $table->string('driving_license',50);

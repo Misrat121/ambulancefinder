@@ -8,6 +8,7 @@ use App\Http\Controllers\Backend\StationsController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AmbulanceController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
+use App\Http\Controllers\Frontend\UserController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/',[FrontendHome::class,'home'])->name('home');
+
+Route::get('/signup',[UserController::class,'signupForm'])->name('user.signup');
+Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
 
 

@@ -17,7 +17,19 @@
         <th scope="col">Phone Number</th>
         <th scope="col">Address</th>
     </tr>
+
     </thead>
+    <tbody>
+    @foreach($registeredusers as $registereduser)
+    <tr>
+        <th scope="row">{{$registereduser->id}}</th>
+        <td>{{$registereduser->name}}</td>
+        <td>{{$registereduser->phone_number}}</td>
+        <td>{{$registereduser->address}}</td>
+
+    </tr>
+    @endforeach
+    </tbody>
 </table>
 
 
@@ -43,9 +55,14 @@
                    
                     </div> 
                     <div class="form-group">
-                        <label for="phone_no">Phone Number</label>
-                        <input name="phonee_no" type="text" class="form-control" id="phone_no" placeholder="Enter Phone Number">
+                        <label for="phone_number">Phone Number</label>
+                        <input name="phone_number" type="text" class="form-control" id="phone_number" placeholder="Enter Phone Number">
                     </div>
+                    <div class="form-group">
+                        <label for="registereduser_address">Address</label>
+                        <input name="registereduser_address" type="text" class="form-control" id="registereduser_address"  placeholder="Enter Registereduser Address">
+                   
+                    </div> 
                     
                     <button type="submit" class="btn btn-primary">Submit</button>
 

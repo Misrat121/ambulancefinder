@@ -14,8 +14,9 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
+        <th scope="col">RegisteredUser ID</th>
         <th scope="col">License No</th>
-        <th scope="col">Contact No</th>
+        <th scope="col">Contact Number</th>
         <th scope="col">Address</th>
     </tr>
     </thead>
@@ -25,14 +26,16 @@
     <tr>
         <th scope="row">{{$registereddriver->id}}</th>
         <td>{{$registereddriver->name}}</td>
+        <td>{{$registereddriver->registereduser->name}}</td>
         <td>{{$registereddriver->license_number}}</td>
-        <td>{{$registereddriver->phone_number}}</td>
+        <td>{{$registereddriver->contact_number}}</td>
         <td>{{$registereddriver->address}}</td>
 
     </tr>
 @endforeach
     </tbody>
 </table>
+{{$registereddrivers->links('pagination::bootstrap-4')}}
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -48,6 +51,14 @@
             <div class="modal-body">
             <form action="{{route('registereddrivers.store')}}" method="POST"> 
         @csrf
+        <div class="form-group">
+                            <label for="driver_name">Select Registered User</label>
+                            <select class="form-control" name="registereduser_id" id="">
+                                @foreach($registeredusers as $user)
+                                <option value="{{$user->id}}">{{$user->name}}</option>
+                                @endforeach
+                            </select>
+                            </div>
             
                 <form>
                     <div class="form-group">

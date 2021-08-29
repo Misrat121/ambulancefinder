@@ -9,14 +9,17 @@ class RegisteredUserController extends Controller
 {
     public function list()
     {
-        return view('backend.layouts.registeredusers.list');
+
+
+        $registeredusers=Registereduser::all();
+        return view('backend.layouts.registeredusers.list',compact('registeredusers'));
     }
     public function store(Request $request)
     {
        Registereduser::create([
-        'name'=>$request->name,
+        'name'=>$request->registereduser_name,
         'phone_number'=>$request->phone_number,
-        'address'=>$request->address,
+        'address'=>$request->registereduser_address,
        ]);
    
        return redirect()->back();

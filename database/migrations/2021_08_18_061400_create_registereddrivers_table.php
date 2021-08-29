@@ -15,6 +15,7 @@ class CreateRegistereddriversTable extends Migration
     {
         Schema::create('registereddrivers', function (Blueprint $table) {
             $table->id();
+            $table->integer('registereduser_id');
             $table->string('name',100);
             $table->string('license_number',11);
             $table->string('contact_number',11);

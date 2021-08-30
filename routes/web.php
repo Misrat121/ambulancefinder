@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\UpdateInfoController;
 use App\Http\Controllers\Backend\RequestsController;
 use App\Http\Controllers\Backend\RegisteredDriverController;
 use App\Http\Controllers\Backend\RegisteredUserController;
+use App\Http\Controllers\Backend\UserController as BackendUser;
 use App\Http\Controllers\Backend\StationsController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AmbulanceController;
@@ -48,6 +49,7 @@ Route::group(['prefix'=>'admin'],function(){
     
     Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
     Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
+    Route::get('/users',[BackendUser::class,'list'])->name('users.list');
     
     Route::get('/requests/manage',[RequestsController::class,'manage'])->name('requests.manage');
     

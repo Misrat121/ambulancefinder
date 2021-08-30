@@ -20,8 +20,9 @@
             <th scope="col">Type</th>
             <th scope="col">Oxygen</th>
             <th scope="col">ICU</th>
-            <th scope="col">Locationr</th>
+            <th scope="col">Location</th>
             <th scope="col">Driver Name</th>
+            <th scope="col">Driver Email</th>
             <th scope="col">Driving License</th>
             <th scope="col">Phone Number</th>
             <th scope="col">NID Number</th>
@@ -44,6 +45,7 @@
             <td>{{$ambulance->icu}}</td>
             <td>{{$ambulance->location}}</td>
             <td>{{$ambulance->driver_name}}</td>
+            <td>{{$ambulance->driver_email}}</td>
             <td>{{$ambulance->driving_license}}</td>
             <td>{{$ambulance->phone_number}}</td>
             <td>{{$ambulance->nid_number}}</td>
@@ -152,6 +154,11 @@
                             <label for="driver_name" class="form-label">Driver Name</label>
                             <input name="driver_name" type="text" class="form-control" id="driver_name"
                                 placeholder="Driver_Name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="driver_email" class="form-label">Driver Name</label>
+                            <input name="driver_email" type="text" class="form-control" id="driver_email"
+                                placeholder="Driver_Email">
                         </div>
                         <div class="mb-3">
                             <label for="driving_license" class="form-label">Driving Licencse</label>

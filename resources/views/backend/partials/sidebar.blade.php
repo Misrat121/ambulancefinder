@@ -38,6 +38,12 @@
               <span data-feather="shopping-cart"></span>
               Registered Users
             </a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('users.list')}}">
+              <span data-feather="shopping-cart"></span>
+             Users
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('registereddrivers.list')}}">

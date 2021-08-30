@@ -156,7 +156,7 @@
                                 placeholder="Driver_Name">
                         </div>
                         <div class="mb-3">
-                            <label for="driver_email" class="form-label">Driver Name</label>
+                            <label for="driver_email" class="form-label">Driver Email</label>
                             <input name="driver_email" type="text" class="form-control" id="driver_email"
                                 placeholder="Driver_Email">
                         </div>

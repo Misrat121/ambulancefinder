@@ -15,7 +15,8 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Phone Number</th>
-        <th scope="col">Address</th>
+        <!-- <th scope="col">Address</th> -->
+        <th scope="col">Email</th>
     </tr>
 
     </thead>
@@ -35,8 +36,8 @@
                 </button>
             </div>
             <div class="modal-body">
-            <!-- <form action="{{route('registeredusers.store')}}" method="POST"> 
-        @csrf -->
+            <form action="{{route('users.store')}}" method="POST"> 
+        @csrf
             
                 <form>
                     <div class="form-group">
@@ -48,9 +49,14 @@
                         <label for="phone_number">Phone Number</label>
                         <input name="phone_number" type="text" class="form-control" id="phone_number" placeholder="Enter Phone Number">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="user_address">Address</label>
                         <input name="user_address" type="text" class="form-control" id="user_address"  placeholder="Enter User Address">
+                   
+                    </div>  -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" type="text" class="form-control" id="user_address"  placeholder="Enter User Address">
                    
                     </div> 
                     

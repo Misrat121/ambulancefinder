@@ -50,6 +50,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
     Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
     Route::get('/users',[BackendUser::class,'list'])->name('users.list');
+    Route::post('/users/store',[BackendUser::class,'store'])->name('users.store');
     
     Route::get('/requests/manage',[RequestsController::class,'manage'])->name('requests.manage');
     

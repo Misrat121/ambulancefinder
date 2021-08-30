@@ -15,6 +15,7 @@ class CreateAmbulancesTable extends Migration
     {
         Schema::create('ambulances', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('owner_name',100);
             $table->string('contact_number',11);
             $table->string('owner_address',50);

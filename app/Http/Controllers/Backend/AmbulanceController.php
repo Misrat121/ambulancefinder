@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Models\Ambulance;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -22,13 +23,13 @@ class AmbulanceController extends Controller
 
      //create user
 
-    // $user= User::create([
-    //     'name'=>$request->driver_name,
-    //     'mobile'=>$request->phone_number,
-    //     'email'=>'driver@gmail.com',
-    //     'role'=>"driver",
-    //     'password'=>bcrypt("123456"),
-    //  ]);
+    $user= User::create([
+        'name'=>$request->driver_name,
+        'mobile'=>$request->phone_number,
+        'email'=>$request->driver_email,
+        'role'=>"driver",
+        'password'=>bcrypt("123456"),
+     ]);
      
 //create ambulance
      Ambulance::create([
@@ -46,7 +47,7 @@ class AmbulanceController extends Controller
          'phone_number'=>$request->phone_number,
          'nid_number'=>$request->nid_number,
          'address'=>$request->address,
-        //  'user_id'=>$user->id,
+         'user_id'=>$user->id,
 
   ]);
    

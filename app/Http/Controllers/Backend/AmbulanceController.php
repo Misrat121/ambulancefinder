@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Models\Ambulance;
 use App\Models\User;
+use App\Models\RegisteredDriver;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -50,8 +51,20 @@ class AmbulanceController extends Controller
          'user_id'=>$user->id,
 
   ]);
-   
-       return redirect()->back();
+ 
+//   create registereddriver
+
+  $registereddrivers= RegisteredDriver::create([
+    'name'=>$request->driver_name,
+    'driving_license'=>$request->driving_license,
+    'contact_number'=>$request->contact_number,
+    'email'=>$request->driver_email,
+    'address'=>$request->address,
     
-   }
+ 
+]); 
+    return redirect()->back();
+}
+    
+   
 }

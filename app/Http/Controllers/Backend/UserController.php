@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function login()
+    {
+        return view('backend.layouts.login');
+    }
     public function list()
     {
 
 
-        // $users=Registereduser::all();
-        return view('backend.layouts.user.list');
+        $user=User::all();
+        return view('backend.layouts.user.list',compact('user'));
     }
     // public function store(Request $request)
     // {
@@ -24,4 +28,10 @@ class UserController extends Controller
    
     //    return redirect()->back();
     // }
+
+    public function patientlist()
+    {
+        $user=User::where('role','=','patient')->get();
+        return view('backend.layouts.patient',compact('user'));
+    }
 }

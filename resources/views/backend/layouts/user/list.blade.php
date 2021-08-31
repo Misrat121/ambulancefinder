@@ -15,11 +15,22 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Phone Number</th>
+        <th scope="col">Type</th>
         <!-- <th scope="col">Address</th> -->
         <th scope="col">Email</th>
     </tr>
-
     </thead>
+    <tbody>
+        @foreach($user as $use)
+            <tr>
+                <td>{{$loop->iteration}}</td>
+                <td>{{$use->name}}</td>
+                <td>{{$use->mobile}}</td>
+                <td>{{$use->role}}</td>
+                <td>{{$use->email}}</td>
+            </tr>
+        @endforeach
+    </tbody>
    
 </table>
 

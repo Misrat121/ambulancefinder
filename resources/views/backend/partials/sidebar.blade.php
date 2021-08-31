@@ -33,16 +33,17 @@
               Manage Query
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('registeredusers.list')}}">
-              <span data-feather="shopping-cart"></span>
-              Registered Users
-            </a>
-            </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{route('users.list')}}">
               <span data-feather="shopping-cart"></span>
              Users
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('patient.list')}}">
+              <span data-feather="shopping-cart"></span>
+            Patient
             </a>
           </li>
           <li class="nav-item">

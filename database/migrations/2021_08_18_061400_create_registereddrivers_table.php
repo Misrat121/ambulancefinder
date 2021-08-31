@@ -14,11 +14,11 @@ class CreateRegistereddriversTable extends Migration
     public function up()
     {
         Schema::create('registereddrivers', function (Blueprint $table) {
-            $table->id();
-            $table->integer('registereduser_id');
+            $table->id();  
             $table->string('name',100);
-            $table->string('license_number',11);
+            $table->string('driving_license',11);
             $table->string('contact_number',11);
+            $table->string('email',11);
             $table->string('address',50);
             $table->string('image')->nullable();
             $table->string('status',10)->default('active');

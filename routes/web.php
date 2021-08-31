@@ -32,7 +32,9 @@ Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('use
 
 
 //admin panel routes
-Route::group(['prefix'=>'admin'],function(){
+
+Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
     Route::get('/',[HomeController::class,'home']);
 
@@ -47,14 +49,17 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/registereddrivers',[RegisteredDriverController::class,'list'])->name('registereddrivers.list');
     Route::post('/registereddrivers/store',[RegisteredDriverController::class,'store'])->name('registereddrivers.store');
     
-    Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
-    Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
+    // Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
+    // Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
     Route::get('/users',[BackendUser::class,'list'])->name('users.list');
     Route::post('/users/store',[BackendUser::class,'store'])->name('users.store');
     
     Route::get('/requests/manage',[RequestsController::class,'manage'])->name('requests.manage');
     
     Route::get('/updateinfo/update',[UpdateInfoController::class,'update'])->name('updateinfo.update');
+
+
+    Route::get('/patients',[BackendUser::class,'patientlist'])->name('patient.list');
 
  });
 

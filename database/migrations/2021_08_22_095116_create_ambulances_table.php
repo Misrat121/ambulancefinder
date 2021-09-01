@@ -19,6 +19,7 @@ class CreateAmbulancesTable extends Migration
             $table->string('owner_name',100);
             $table->string('contact_number',11);
             $table->string('owner_address',50);
+            $table->string('image')->nullable();
             $table->string('vehicle_number',50);
             $table->string('type',50)->nullable();
             $table->string('oxygen',50)->nullable();
@@ -30,7 +31,7 @@ class CreateAmbulancesTable extends Migration
             $table->string('phone_number',50);
             $table->string('nid_number',50);
             $table->string('address',50);
-            $table->string('image')->nullable();
+            
             $table->string('status',10)->default('active');
             $table->timestamps();
         });

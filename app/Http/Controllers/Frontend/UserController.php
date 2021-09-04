@@ -28,5 +28,9 @@ class UserController extends Controller
          return redirect()->back()->with('success','User Registration Successful.');
     }
 
+ public function loginForm()
+    {
+        return view('frontend.layouts.login');
+    }
 
 }

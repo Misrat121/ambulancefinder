@@ -28,6 +28,8 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/signup',[UserController::class,'signupForm'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
+Route::get('/login',[UserController::class,'loginForm'])->name('user.login');
+
 
 
 

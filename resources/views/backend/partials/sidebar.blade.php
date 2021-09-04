@@ -1,6 +1,13 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
+
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <span data-feather="home"></span>
+              {{auth()->user()->name}}
+            </a>
+          </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">
               <span data-feather="home"></span>
@@ -13,12 +20,7 @@
               Ambulances
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('category.list')}}">
-              <span data-feather="file"></span>
-              Category
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{route('stations.list')}}">
               <span data-feather="file"></span>
@@ -58,12 +60,7 @@
               Requests
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('updateinfo.update')}}">
-              <span data-feather="bar-chart-2"></span>
-              Update Contact Info
-            </a>
-          </li>
+        
                   </ul>
       </div>
 </nav>

@@ -20,6 +20,7 @@
           <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
           <li><a href="{{route('user.signup')}}" class="nav-link">Signup</a></li>
+          <li><a href="{{route('user.login')}}" class="nav-link">Log in</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>

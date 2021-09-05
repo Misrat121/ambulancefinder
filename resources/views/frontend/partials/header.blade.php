@@ -15,18 +15,21 @@
 
       <nav class="site-navigation text-right ml-auto d-none d-lg-block" role="navigation">
         <ul class="site-menu main-menu js-clone-nav ml-auto ">
-          <li class="active"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
           <li><a href="listing.html" class="nav-link">Listing</a></li>
-          <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
+          @if(auth()->user())
+                        <a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>
+                        <a class="nav-item nav-link" href="">{{auth()->user()->name}}</a>
+                        @else
           <li><a href="{{route('user.signup')}}" class="nav-link">Signup</a></li>
           <li><a href="{{route('user.login')}}" class="nav-link">Log in</a></li>
+          @endif
           <li><a href="about.html" class="nav-link">About</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
       </nav>
     </div>
-
     
   </div>
 </div>

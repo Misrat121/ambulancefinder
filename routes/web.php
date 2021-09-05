@@ -25,10 +25,18 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 
+// //login here
+Route::get('/login',[UserController::class,'login'])->name('user.login');
+Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.login');
+
+
 Route::get('/signup',[UserController::class,'signupForm'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
-Route::get('/login',[UserController::class,'loginForm'])->name('user.login');
+
+Route::group(['prefix'=>'user','middleware'=>'auth'],function (){
+    Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
+});
 
 
 
@@ -37,7 +45,7 @@ Route::get('/login',[UserController::class,'loginForm'])->name('user.login');
 
 Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
 Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
-Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
  
 
     Route::get('/',[HomeController::class,'home'])->name('dashboard');

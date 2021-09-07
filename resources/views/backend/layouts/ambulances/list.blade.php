@@ -12,7 +12,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">ID</th>
             <th scope="col">Owner Name</th>
             <th scope="col">Contact Number</th>
             <th scope="col">Owner Address</th>
@@ -31,8 +31,8 @@
         </tr>
     </thead>
     <tbody>
-        {{--course--}}
-        {{--@dd($courses)--}}
+       
+        {{--@dd($ambulances)--}}
         @foreach($ambulances as $ambulance)
         <tr>
             <td>{{$loop->iteration}}</td>

@@ -13,11 +13,13 @@ class AmbulanceController extends Controller
     {
         $ambulances=Ambulance::all();
         //dd($ambulances->all());
-        return view('backend.layouts.ambulances.list',compact('ambulances'));
+        return view('backend.layouts.ambulances.list',compact('ambulances',));
     }
 
     public function store(Request $request)
     {
+
+        
 
         // dd($request->all());
     

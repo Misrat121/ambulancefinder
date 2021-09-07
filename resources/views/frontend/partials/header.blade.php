@@ -18,6 +18,7 @@
           <li class="active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
           <li><a href="listing.html" class="nav-link">Listing</a></li>
           <li><a href="blog.html" class="nav-link">Blog</a></li>
+          <li><a href="{{route('ambulance')}}" class="nav-link">Ambulance</a></li>
           @if(auth()->user())
                         <a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>
                         <a class="nav-item nav-link" href="">{{auth()->user()->name}}</a>

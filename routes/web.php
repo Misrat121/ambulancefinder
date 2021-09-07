@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\StationsController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AmbulanceController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
+use App\Http\Controllers\Frontend\AmbulanceController as FrontendAmbulance;
 use App\Http\Controllers\Frontend\UserController;
 
 use Illuminate\Support\Facades\Route;
@@ -25,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 
+Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
 // //login here
 Route::get('/login',[UserController::class,'login'])->name('user.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.login');
@@ -37,7 +39,6 @@ Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('use
 Route::group(['prefix'=>'user','middleware'=>'auth'],function (){
     Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
 });
-
 
 
 

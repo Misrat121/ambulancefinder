@@ -25,11 +25,11 @@
     @foreach($registereddrivers as $registereddriver)
     <tr>
         <th scope="row">{{$registereddriver->id}}</th>
-        <td>{{$registereddriver->name}}</td>
+        <td>{{$registereddriver->driver_name}}</td>
 
         <td>{{$registereddriver->driving_license}}</td>
         <td>{{$registereddriver->contact_number}}</td>
-        <td>{{$registereddriver->email}}</td>
+        <td>{{$registereddriver->driver_email}}</td>
         <td>{{$registereddriver->address}}</td>
 
     </tr>

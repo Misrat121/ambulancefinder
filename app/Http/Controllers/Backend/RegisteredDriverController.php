@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Models\RegisteredDriver;
-
+use App\Models\Ambulance;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,8 +10,8 @@ class RegisteredDriverController extends Controller
 {
     public function list()
     {
-      $registereddrivers=RegisteredDriver::paginate(2);
-
+      $registereddrivers=Ambulance::paginate(2);
+  // dd($registereddrivers);
 
         return view('backend.layouts.registereddrivers.list',compact('registereddrivers'));
     }

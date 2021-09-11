@@ -56,7 +56,7 @@ class AmbulanceController extends Controller
  
 //   create registereddriver
 
-  $registereddrivers= RegisteredDriver::create([
+    $registereddrivers= RegisteredDriver::create([
     'name'=>$request->driver_name,
     'driving_license'=>$request->driving_license,
     'contact_number'=>$request->contact_number,

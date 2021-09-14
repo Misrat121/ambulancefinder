@@ -340,7 +340,7 @@ body{
             <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">ID</th>
       <th scope="col">Type</th>
       <th scope="col">Oxygen</th>
       <th scope="col">ICU</th>
@@ -353,7 +353,8 @@ body{
   <tbody>
   
   <tr>
-                <th scope="row">1</th>
+                <th scope="row">{{$data->id}}</th>
+               
                 <td>{{$data->type}}</td>
                 <td>{{$data->oxygen}}</td>
                 <td>{{$data->icu}}</td>
@@ -369,14 +370,7 @@ body{
 
 
 </div>
-            <!-- <div class="card-body pt-0">
-                
-                   
-                    <div class="widget-49-meeting-action">
-                    <a href="#" class="btn btn-dark">Send Request</a>
-                    </div>
-                </div>
-            </div> -->
+           
         </div>
     </div>
     @endforeach

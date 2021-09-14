@@ -8,7 +8,11 @@
     Add New Ambulance
 </button>
 
-
+@if(session()->has('message'))
+        <div class="row" style="padding: 10px;">
+            <span class="alert alert-success">{{session()->get('message')}}</span>
+        </div>
+    @endif
 <table class="table">
     <thead>
         <tr>
@@ -27,6 +31,7 @@
             <th scope="col">Phone Number</th>
             <th scope="col">NID Number</th>
             <th scope="col">Address</th>
+            <th scope="col">Action</th>
 
         </tr>
     </thead>
@@ -50,7 +55,11 @@
             <td>{{$ambulance->phone_number}}</td>
             <td>{{$ambulance->nid_number}}</td>
             <td>{{$ambulance->address}}</td>
-
+            <td>
+                <a onclick="return confirm('Are you sure you want to delete this service?');"href="{{route('ambulances.delete',$ambulance->id)}}" class="btn btn-danger">Delete</a>
+                <a href="#" class="btn btn-info">Edit</a>
+              
+            </td>
         </tr>
         @endforeach
     </tbody>

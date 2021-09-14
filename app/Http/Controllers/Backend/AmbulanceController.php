@@ -15,6 +15,17 @@ class AmbulanceController extends Controller
         //dd($ambulances->all());
         return view('backend.layouts.ambulances.list',compact('ambulances',));
     }
+    public function delete($id)
+    {
+//        Product::destroy($id);
+        $ambulances=Ambulance::find($id);
+        if( $ambulances)
+        {
+            $ambulances->delete();
+            return redirect()->back()->with('message','Ambulance Deleted successfully.');
+        }
+        return redirect()->back()->with('message','No ambulance found to delete.');
+    }
 
     public function store(Request $request)
     {
@@ -68,5 +79,5 @@ class AmbulanceController extends Controller
     return redirect()->back();
 }
     
-   
+
 }

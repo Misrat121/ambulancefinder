@@ -11,6 +11,7 @@ use App\Http\Controllers\Backend\AmbulanceController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 use App\Http\Controllers\Frontend\AmbulanceController as FrontendAmbulance;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\AboutController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 
 Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
+
+Route::get('/about',[AboutController::class,'about'])->name('about');
 // //login here
 Route::get('/login',[UserController::class,'login'])->name('user.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.login');
@@ -34,6 +37,11 @@ Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.logi
 
 Route::get('/signup',[UserController::class,'signupForm'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
+
+
+// Driver signup
+Route::get('/driver/signup',[UserController::class,'driversignupForm'])->name('driver.signup');
+
 
 
 Route::group(['prefix'=>'user','middleware'=>'auth'],function (){
@@ -54,7 +62,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
 
     Route::get('/ambulances',[AmbulanceController::class,'list'])->name('ambulances.list');
     Route::post('/ambulances/store',[AmbulanceController::class,'store'])->name('ambulances.store');
-    
+    Route::get('/ambulances/delete/{id}',[AmbulanceController::class,'delete'])->name('ambulances.delete');
     Route::get('/category/list',[CategoryController::class,'list'])->name('category.list');
     
     Route::get('/stations/list',[StationsController::class,'list'])->name('stations.list');

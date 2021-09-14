@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         return view('frontend.layouts.signup');
     }
-
+    
     public function signupFormPost(Request $request)
     {
 
@@ -36,6 +36,10 @@ class UserController extends Controller
 
          return redirect()->back()->with('success','User Registration Successful.');
      }
+     public function driversignupForm()
+    {
+        return view('frontend.layouts.driversignup');
+    }
 
     public function login()
     {

@@ -31,7 +31,6 @@ class CreateAmbulancesTable extends Migration
             $table->string('phone_number',50);
             $table->string('nid_number',50);
             $table->string('address',50);
-            
             $table->string('status',10)->default('active');
             $table->timestamps();
         });

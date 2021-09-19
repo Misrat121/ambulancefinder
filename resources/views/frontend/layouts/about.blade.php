@@ -1,6 +1,14 @@
-@extends('backend.master')
+@extends('frontend.master')
+
+@section('contents')
 
 
-@section('content')
-<h1>About</h1>
+
+
+
+
+<h3>WHAT WE STAND FOR</h3>
+
+
+
 @endsection

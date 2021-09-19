@@ -27,6 +27,12 @@
               Stations
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('location.list')}}">
+              <span data-feather="file"></span>
+             Location
+            </a>
+          </li>
           
           
           <li class="nav-item">

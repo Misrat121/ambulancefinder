@@ -5,6 +5,7 @@ use App\Http\Controllers\Backend\RequestsController;
 use App\Http\Controllers\Backend\RegisteredDriverController;
 use App\Http\Controllers\Backend\RegisteredUserController;
 use App\Http\Controllers\Backend\UserController as BackendUser;
+use App\Http\Controllers\Backend\LocationController;
 use App\Http\Controllers\Backend\StationsController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\AmbulanceController;
@@ -29,7 +30,9 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 
 Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
 
+
 Route::get('/about',[AboutController::class,'about'])->name('about');
+
 // //login here
 Route::get('/login',[UserController::class,'login'])->name('user.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.login');
@@ -71,6 +74,9 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
     Route::get('/registereddrivers',[RegisteredDriverController::class,'list'])->name('registereddrivers.list');
     Route::post('/registereddrivers/store',[RegisteredDriverController::class,'store'])->name('registereddrivers.store');
     
+
+    Route::get('/locations',[LocationController::class,'list'])->name('location.list');
+    Route::post('/locations/store',[LocationController::class,'store'])->name('location.store');
     // Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
     // Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
     Route::get('/users',[BackendUser::class,'list'])->name('users.list');

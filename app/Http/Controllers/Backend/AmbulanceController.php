@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 use App\Models\Ambulance;
 use App\Models\User;
+use App\Models\Location;
 use App\Models\RegisteredDriver;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,7 +14,8 @@ class AmbulanceController extends Controller
     {
         $ambulances=Ambulance::all();
         //dd($ambulances->all());
-        return view('backend.layouts.ambulances.list',compact('ambulances',));
+        $locations=Location::orderBy('id','desc')->toBase()->get();
+        return view('backend.layouts.ambulances.list',compact('ambulances','locations'));
     }
     public function delete($id)
     {
@@ -30,10 +32,7 @@ class AmbulanceController extends Controller
     public function store(Request $request)
     {
 
-        
-
         // dd($request->all());
-    
 
      //create user
 
@@ -54,7 +53,7 @@ class AmbulanceController extends Controller
          'type'=>$request->type,
          'oxygen'=>$request->oxygen,
          'icu'=>$request->icu,
-         'location'=>$request->location,
+         'location_id'=>$request->location_id,
          'driver_name'=>$request->driver_name,
          'driver_email'=>$request->driver_email,
          'driving_license'=>$request->driving_license,

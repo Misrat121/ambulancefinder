@@ -48,7 +48,7 @@
             <td>{{$ambulance->type}}</td>
             <td>{{$ambulance->oxygen}}</td>
             <td>{{$ambulance->icu}}</td>
-            <td>{{$ambulance->location}}</td>
+            <td>{{$ambulance->location->name}}</td>
             <td>{{$ambulance->driver_name}}</td>
             <td>{{$ambulance->driver_email}}</td>
             <td>{{$ambulance->driving_license}}</td>
@@ -150,8 +150,16 @@
                         </div>
                         <div class="mb-3">
                             <label for="location" class="form-label">Location</label>
-                            <input name="location" type="text" class="form-control" id="location"
-                                placeholder="Location">
+                           
+                        <select type="text" id="cf-3" placeholder="Location" class="form-control px-3"
+                        name="location_id">
+                                @foreach($locations as $location)
+                      <option value="{{$location->id}}">
+                        {{$location->name}}
+                      </option>
+
+                      @endforeach
+                      </select>
                         </div>
                         <!-- test2 end -->
                         <!-- test3-->

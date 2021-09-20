@@ -14,7 +14,7 @@
                 </div>
               </div>
               
-              <form class="trip-form">
+              <form class="trip-form" action="{{route('search')}}">
                 
                 <div class="row align-items-center">
                   
@@ -27,10 +27,10 @@
                       
                     </select>
                   </div>
-                  
+
                   <div class="mb-3 mb-md-0 col-md-3">
                     <div class="form-control-wrap">
-                      <select type="text" id="cf-3" placeholder="Pick up point" class="form-control px-3">
+                      <select type="text" id="cf-3" name="from_location" placeholder="Pick up point" class="form-control px-3">
                       @foreach($locations as $location)
                       <option value="{{$location->id}}">
                         {{$location->name}}
@@ -43,7 +43,7 @@
                   </div>
                  <div class="mb-3 mb-md-0 col-md-3">
                     <div class="form-control-wrap">
-                      <select type="text" id="cf-4" placeholder="Destination" class="form-control px-3">
+                      <select type="text" id="cf-4" name="to_location" placeholder="Destination" class="form-control px-3">
                       
                       @foreach($locations as $location)
                       <option value="{{$location->id}}">
@@ -57,7 +57,7 @@
                   </div>
                   <div class="mb-3 mb-md-0 col-md-3">
                    
-                    <a href="{{route('ambulance')}}" class="btn btn-dark">Search Now</a>
+                    <button Type="submit" class="btn btn-dark">Search Now</button>
 
                   </div>
                 </div>

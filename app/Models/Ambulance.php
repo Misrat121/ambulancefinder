@@ -9,4 +9,10 @@ class Ambulance extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+
+    public function location()
+    {
+        return $this->belongsTo(location::class,'location_id','id');
+    }
 }

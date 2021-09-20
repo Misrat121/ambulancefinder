@@ -24,7 +24,7 @@ class CreateAmbulancesTable extends Migration
             $table->string('type',50)->nullable();
             $table->string('oxygen',50)->nullable();
             $table->string('icu',50)->nullable();
-            $table->string('location',50);
+            $table->integer('location_id');
             $table->string('driver_name',50);
             $table->string('driver_email');
             $table->string('driving_license',50);

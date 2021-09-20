@@ -1,5 +1,7 @@
 @extends('frontend.master')
 @section('contents')
+
+
 <div class="hero" style="background-image: url('frontend/images/banner-image.png');">
         
         <div class="container">
@@ -25,16 +27,31 @@
                       
                     </select>
                   </div>
+                  
                   <div class="mb-3 mb-md-0 col-md-3">
                     <div class="form-control-wrap">
-                      <input type="text" id="cf-3" placeholder="Pick up point" class="form-control px-3">
-                     
+                      <select type="text" id="cf-3" placeholder="Pick up point" class="form-control px-3">
+                      @foreach($locations as $location)
+                      <option value="{{$location->id}}">
+                        {{$location->name}}
+                      </option>
 
+                      @endforeach
+                      </select>
+                      
                     </div>
                   </div>
                  <div class="mb-3 mb-md-0 col-md-3">
                     <div class="form-control-wrap">
-                      <input type="text" id="cf-4" placeholder="Destination" class="form-control px-3">
+                      <select type="text" id="cf-4" placeholder="Destination" class="form-control px-3">
+                      
+                      @foreach($locations as $location)
+                      <option value="{{$location->id}}">
+                        {{$location->name}}
+                      </option>
+
+                      @endforeach
+                      </select>
                       
                     </div>
                   </div>

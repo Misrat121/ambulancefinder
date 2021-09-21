@@ -26,6 +26,6 @@ class HomeController extends Controller
     
         $ambulance = Ambulance::whereBetween('location_id',[$from_location,$to_location])->get();
 
-        return viwe('frontend.layouts.ambulanceList',compact('ambulance'));
+        return view('frontend.layouts.ambulanceList',compact('ambulance'));
     }
 }

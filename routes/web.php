@@ -29,6 +29,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[FrontendHome::class,'home'])->name('home');
 
 Route::get('/search',[FrontendHome::class,'search'])->name('search');
+Route::get('/ambulanceList',[FrontendHome::class,'ambulanceList'])->name('ambulanceList');
 
 Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
 

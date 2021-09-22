@@ -323,7 +323,7 @@ body{
   
     <div class="col-lg-12">
        <!-- loop here -->   
-    @foreach()
+    
         <div class="card card-margin">
 
  <div class="card-header no-border">
@@ -339,15 +339,15 @@ body{
       <th scope="col">User ID</th>
     </tr>
   </thead>
-
+  @foreach($request as $data)
   <tr>
-        <th scope="row">{{}}</th>
+        <th scope="row">{{$data->id}}</th>
                
-        <td>{{$->ambulance_id}}</td>
-       <td>{{$->user_id}}</td>
+        <td>{{$data->ambulance->owner_name}}</td>
+       <td>{{$data->user_id}}</td>
               
 </tr>
-       
+@endforeach     
   
   </tbody>
   
@@ -357,6 +357,7 @@ body{
 </div>
            
 </div>
+
 </div>
    
 </div>

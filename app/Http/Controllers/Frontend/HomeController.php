@@ -37,6 +37,7 @@ class HomeController extends Controller
             'ambulance_id' => $request->ambulance_id,
             'status' => 'pending'
         ]);
+        
         return redirect()->back();
 
         

@@ -31,6 +31,8 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 Route::get('/search',[FrontendHome::class,'search'])->name('search');
 Route::get('/ambulanceList',[FrontendHome::class,'ambulanceList'])->name('ambulanceList');
 
+
+
 Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
 
 
@@ -49,9 +51,9 @@ Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('use
 Route::get('/driver/signup',[UserController::class,'driversignupForm'])->name('driver.signup');
 
 
-
 Route::group(['prefix'=>'user','middleware'=>'auth'],function (){
-    Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
+Route::get('/logout',[UserController::class,'logout'])->name('user.logout');
+Route::get('/sendrequest',[FrontendHome::class,'sendrequest'])->name('sendrequest');
 });
 
 

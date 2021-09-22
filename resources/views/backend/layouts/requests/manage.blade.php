@@ -1,221 +1,374 @@
 @extends('backend.master')
-
-
 @section('content')
-
-
 <style type="text/css" >
-
 body{
-    background: #f6f9fc;
-    margin-top:20px;}
-/* booking */
-
-.bg-light-blue {
-    background-color: #e9f7fe !important;
-    color: #3184ae;
-    padding: 7px 18px;
-    border-radius: 4px;
+    background:#b3e0f2;
+    
+    margin-top:20px;
 }
 
-.bg-light-green {
-    background-color: rgba(40, 167, 69, 0.2) !important;
-    padding: 7px 18px;
-    border-radius: 4px;
-    color: #28a745 !important;
-}
-
-.buttons-to-right {
-    position: absolute;
-    right: 0;
-    top: 40%;
-}
-
-.btn-gray {
-    color: #666;
-    background-color: #eee;
-    padding: 7px 18px;
-    border-radius: 4px;
-}
-
-.booking:hover .buttons-to-right .btn-gray {
-    opacity: 1;
-    transition: .3s;
-}
-
-.buttons-to-right .btn-gray {
-    opacity: 0;
-    transition: .3s;
-}
-
-.btn-gray:hover {
-    background-color: #36a3f5;
-    color: #fff;
-}
-
-.booking {
-    margin-bottom: 30px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 30px;
-}
-
-.booking:last-child {
-    margin-bottom: 0px;
-    border-bottom: none;
-    padding-bottom: 0px;
-}
-
-@media screen and (max-width: 575px) {
-    .buttons-to-right {
-        top: 10%;
-    }
-    .buttons-to-right a {
-        display: block;
-        margin-bottom: 20px;
-    }
-    .buttons-to-right a:last-child {
-        margin-bottom: 0px;
-    }
-    .bg-light-blue,
-    .bg-light-green,
-    .btn-gray {
-        padding: 7px;
-    }
+.card-margin {
+    margin-bottom: 1.875rem;
 }
 
 .card {
-    margin-bottom: 20px;
-    background-color: #fff;
-    border-radius: 4px;
-    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
-    box-shadow: none;
-    border: none;
-    padding: 25px;
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
 }
-.mb-5, .my-5 {
-    margin-bottom: 3rem!important;
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #FFFFFF;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
 }
-.msg-img {
-    margin-right: 20px;
+
+.card .card-header.no-border {
+    border: 0;
 }
-.msg-img img {
-    width: 60px;
-    border-radius: 50%;
+.card .card-header {
+    background: none;
+    padding: 0 0.9375rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
 }
-img {
-    max-width: 100%;
-    height: auto;
+.card-header:first-child {
+    border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
+}
+
+.widget-49 .widget-49-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #edf1fc;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
+  color: #4e73e5;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
+  color: #4e73e5;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fcfcfd;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-day {
+  color: #dde1e9;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-month {
+  color: #dde1e9;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #e8faf8;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-day {
+  color: #17d1bd;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-month {
+  color: #17d1bd;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebf7ff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info .widget-49-date-day {
+  color: #36afff;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info .widget-49-date-month {
+  color: #36afff;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: floralwhite;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-day {
+  color: #FFC868;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-month {
+  color: #FFC868;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #feeeef;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-day {
+  color: #F95062;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-month {
+  color: #F95062;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fefeff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light .widget-49-date-day {
+  color: #f7f9fa;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light .widget-49-date-month {
+  color: #f7f9fa;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebedee;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark .widget-49-date-day {
+  color: #394856;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark .widget-49-date-month {
+  color: #394856;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f0fafb;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-day {
+  color: #68CBD7;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-month {
+  color: #68CBD7;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
+  color: #3c4142;
+  font-size: 14px;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
+  color: #B1BAC5;
+  font-size: 13px;
+}
+
+.widget-49 .widget-49-meeting-points {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: .5rem;
+}
+
+.widget-49 .widget-49-meeting-points .widget-49-meeting-item {
+  display: list-item;
+  color: #727686;
+}
+
+.widget-49 .widget-49-meeting-points .widget-49-meeting-item span {
+  margin-left: .5rem;
+}
+
+.widget-49 .widget-49-meeting-action {
+  text-align: right;
+}
+
+.widget-49 .widget-49-meeting-action a {
+  text-transform: uppercase;
 }
 
 </style>
-
-
+<br><br><br><br>
 <div class="container">
 <div class="row">
-    <div class="col-md-12">
-        <div class="card card-white mb-5">
-            <div class="card-heading clearfix border-bottom mb-4">
-                <h4 class="card-title">Booking Requests</h4>
-            </div>
-            <div class="card-body">
-                <ul class="list-unstyled">
-                    <li class="position-relative booking">
-                        <div class="media">
-                            <div class="msg-img">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mb-4">Sunny Apartment <span class="badge badge-primary mx-3">Pending</span><span class="badge badge-danger">Unpaid</span></h5>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Date:</span>
-                                    <span class="bg-light-blue">02.03.2020 - 04.03.2020</span>
-                                </div>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Details:</span>
-                                    <span class="bg-light-blue">2 Adults</span>
-                                </div>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Price:</span>
-                                    <span class="bg-light-blue">$147</span>
-                                </div>
-                                <div class="mb-5">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-1 mb-sm-0">Clients:</span>
-                                    <span class="border-right pr-2 mr-2">John Inoue</span>
-                                    <span class="border-right pr-2 mr-2"> john@example.com</span>
-                                    <span>123-563-789</span>
-                                </div>
-                                <a href="#" class="btn-gray">Send Message</a>
-                            </div>
-                        </div>
-                        <div class="buttons-to-right">
-                            <a href="#" class="btn-gray mr-2"><i class="far fa-times-circle mr-2"></i> Reject</a>
-                            <a href="#" class="btn-gray"><i class="far fa-check-circle mr-2"></i> Approve</a>
-                        </div>
-                    </li>
 
-                    <li class="position-relative booking">
-                        <div class="media">
-                            <div class="msg-img">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mb-4">Burger House <span class="badge badge-success ml-3">Approved</span></h5>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Date:</span>
-                                    <span class="bg-light-green">06.03.2020 - 07.03.2020</span>
-                                </div>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Details:</span>
-                                    <span class="bg-light-green">2 Adults, 2 Children</span>
-                                </div>
 
-                                <div class="mb-5">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-1 mb-sm-0">Clients:</span>
-                                    <span class="border-right pr-2 mr-2">Jaime Cressey</span>
-                                    <span class="border-right pr-2 mr-2"> jaime@example.com</span>
-                                    <span>355-456-789</span>
-                                </div>
-                                <a href="#" class="btn-gray">Send Message</a>
-                            </div>
-                        </div>
-                        <div class="buttons-to-right">
-                            <a href="#" class="btn-gray mr-2"><i class="far fa-times-circle mr-2"></i>Cancled</a>
-                        </div>
-                    </li>
+  
+    <div class="col-lg-12">
+       <!-- loop here -->   
+    @foreach()
+        <div class="card card-margin">
 
-                    <li class="position-relative booking">
-                        <div class="media">
-                            <div class="msg-img">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
-                            </div>
-                            <div class="media-body">
-                                <h5 class="mb-4">Modern Hotel <span class="badge badge-danger ml-3">Cancled</span></h5>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Date:</span>
-                                    <span class="btn-gray">20.03.2020 - 24.03.2020</span>
-                                </div>
-                                <div class="mb-3">
-                                    <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">Booking Details:</span>
-                                    <span class="btn-gray">2 Adults</span>
-                                </div>
-                                <div>
-                                    <span class="mr-2 d-block d-sm-inline-block mb-1 mb-sm-0">Clients:</span>
-                                    <span class="border-right pr-2 mr-2">Tesha Stovall</span>
-                                    <span class="border-right pr-2 mr-2"> tesha@example.com</span>
-                                    <span>123-456-684</span>
-                                </div>
+ <div class="card-header no-border">
+    <h5 class="card-title">Ambulance</h5>
+</div>
+    <div>
+    <div>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Ambulance ID</th>
+      <th scope="col">User ID</th>
+    </tr>
+  </thead>
 
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+  <tr>
+        <th scope="row">{{}}</th>
+               
+        <td>{{$->ambulance_id}}</td>
+       <td>{{$->user_id}}</td>
+              
+</tr>
+       
+  
+  </tbody>
+  
+</table>
 
-            </div>
-        </div>
 
-    </div>
+</div>
+           
+</div>
+</div>
+   
 </div>
 </div>
 @endsection
+
+
+
+
+
+
+
+
+
+

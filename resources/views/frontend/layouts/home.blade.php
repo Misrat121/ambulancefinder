@@ -28,46 +28,42 @@
                     </select>
                   </div>
 
-                  <div class="mb-3 mb-md-0 col-md-3">
-                    <div class="form-control-wrap">
-                      <select type="text" id="cf-3" name="from_location" placeholder="Pick up point" class="form-control px-3">
-                      @foreach($locations as $location)
-                      <option value="{{$location->id}}">
-                        {{$location->name}}
-                      </option>
-
-                      @endforeach
-                      </select>
+   <div class="mb-3 mb-md-0 col-md-3">
+    <div class="form-control-wrap">
+       <select type="text" id="cf-3" name="from_location" placeholder="Pick up point" class="form-control px-3">
+     @foreach($locations as $location)
+         <option value="{{$location->id}}">
+       {{$location->name}}
+      </option>
+    @endforeach
+    </select>
+          </div>
+      </div>
+    <div class="mb-3 mb-md-0 col-md-3">
+      <div class="form-control-wrap">
+     <select type="text" id="cf-4" name="to_location" placeholder="Destination" class="form-control px-3">
                       
-                    </div>
-                  </div>
-                 <div class="mb-3 mb-md-0 col-md-3">
-                    <div class="form-control-wrap">
-                      <select type="text" id="cf-4" name="to_location" placeholder="Destination" class="form-control px-3">
-                      
-                      @foreach($locations as $location)
-                      <option value="{{$location->id}}">
-                        {{$location->name}}
-                      </option>
-
-                      @endforeach
-                      </select>
-                      
-                    </div>
-                  </div>
-                  <div class="mb-3 mb-md-0 col-md-3">
+   @foreach($locations as $location)
+          <option value="{{$location->id}}">
+       {{$location->name}}
+     </option>
+   @endforeach
+      </select>
+    </div>
+     </div>
+     <div class="mb-3 mb-md-0 col-md-3">
                    
-                    <button Type="submit" class="btn btn-dark">Search Now</button>
+      <button Type="submit" class="btn btn-dark">Search Now</button>
 
-                  </div>
-                </div>
+      </div>
+     </div>
                 
-              </form>
+     </form>
 
-            </div>
           </div>
         </div>
       </div>
+   </div>
   
 
 

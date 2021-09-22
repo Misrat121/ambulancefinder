@@ -1,14 +1,13 @@
-@extends('backend.master')
+@extends('frontend.master')
+@section('contents')
 
-@section('content')
-
-
+<!-- style starts here -->
 <style type="text/css" >
 
 body{
     background: #f6f9fc;
     margin-top:20px;}
-/* booking */
+
 
 .bg-light-blue {
     background-color: #e9f7fe !important;
@@ -107,38 +106,43 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 </style>
+<!-- style end here -->
 
-
+<br> <br>
 <div class="container">
 <div class="row">
     <div class="col-md-12">
     
         <div class="card card-white mb-5">
-            <div class="card-heading clearfix border-bottom mb-4">
-                <h4 class="card-title">Ambulance Requests</h4>
-            </div>
-            @foreach($ambulance as $data)
-            <div class="card-body">
+        <div class="card-heading clearfix border-bottom mb-4">
+        <h4 class="card-title">Ambulance Requests</h4>
+         </div>
+     @foreach($ambulance as $data)
+     
+     <form  action="{{route('sendrequest')}}" method="get" >
+     
+    <div class="card-body">
             
         <ul class="list-unstyled">
          <li class="position-relative booking">
-             <div class="media">
-                 <div class="msg-img">
+        <div class="media">
+  <div class="msg-img">
           <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
             </div>
                             
          <div class="media-body">
-                 <div class="mb-3">
-             <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">{{$data->owner_name}}</span>
-                 </div>
-            <button Type="submit" class="btn btn-dark">Send Request</button>
-                 </div>
-              </div>
+  <div class="mb-3">
+     <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">{{$data->owner_name}}</span>
+     </div>
+     <input type="hidden" value="{{$data->id}}" name="ambulance_id">
+ <button Type="submit" class="btn btn-dark">Send Request</button>
+         </div>
+    </div>
+    </form>
   @endforeach
 
-    </div>
-</div>
-</div>
+   </div>
+     </div>
+      </div>
 @endsection

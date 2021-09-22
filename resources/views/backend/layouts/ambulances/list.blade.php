@@ -71,141 +71,131 @@
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+     <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Name</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+         </button>
+    </div>
 
+        <div class="modal-body">
+    <form action="{{route('ambulances.store')}}" method="POST">
+     @csrf
 
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Name</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
+     <!-- test -->
 
+     <div class="modal-header">
+      <h6 class="modal-title" id="Owner">Name</h6>
+        </div>
 
-                <form action="{{route('ambulances.store')}}" method="POST">
-                    @csrf
+    <div class="mb-3">
+         <label for="owner_name" class="form-label">Owner Name</label>
+    <input name="owner_name" type="text" class="form-control" id="Oowner_name" placeholder="Owner_Name">
+        </div>
 
-                    <!-- test -->
+    <div class="mb-3">
+         <label for="contact_number" class="form-label">Contact Number</label>
+     <input name="contact_number" type="text" class="form-control" id="contact_number" placeholder="Contact_Number">
+        </div>
 
-                    <div class="modal-header">
-                        <h6 class="modal-title" id="Owner">Name</h6>
-                    </div>
-                    <div class="mb-3">
-                        <label for="owner_name" class="form-label">Owner Name</label>
-                        <input name="owner_name" type="text" class="form-control" id="Owner" placeholder="Owner_Name">
-                    </div>
-                    <div class="mb-3">
-                        <label for="contact_number" class="form-label">Contact Number</label>
-                        <input name="contact_number" type="text" class="form-control" id="Owner"
-                            placeholder="Contact_Number">
-                    </div>
-                    <div class="mb-3">
-                        <label for="owner_address" class="form-label">Owner Address</label>
-                        <input name="owner_address" type="text" class="form-control" id="Owner"
-                            placeholder="Owner_Address">
-                    </div>
+    <div class="mb-3">
+        <label for="owner_address" class="form-label">Owner Address</label>
+    <input name="owner_address" type="text" class="form-control" id="Owner" placeholder="Owner_Address">
+        </div>
+         <!-- test end-->
 
+     <!-- test2 -->
 
-                    <!-- test end-->
+     <div class="modal-header">
+ <h6 class="modal-title" id="Owner">Name</h6>
+    </div>
 
-                    <!-- test2 -->
+     <p>Type</p>
+    <input type="radio" id="AC" name="type" value="AC">
+    <label for="ac">AC</label><br>
+    <input type="radio" id="Non_ac" name="type" value="Non AC">
+    <label for="Non_ac">Non Ac</label><br>
 
-                    <div class="modal-header">
-                        <h6 class="modal-title" id="Owner">Name</h6>
-                    </div>
+    <br>  
 
-                        <p>Type</p>
-                          <input type="radio" id="AC" name="type" value="AC">
-                          <label for="ac">AC</label><br>
-                          <input type="radio" id="Non_ac" name="type" value="Non AC">
-                          <label for="Non_ac">Non Ac</label><br>
+    <p>Oxygen</p>
+    <input type="radio" id="yes" name="oxygen" value="Yes">
+    <label for="yes">Yes</label><br>
+    <input type="radio" id="no" name="oxygen" value="No">
+    <label for="no">NO</label><br>  
 
-                        <br>  
-
-                        <p>Oxygen</p>
-                        <input type="radio" id="yes" name="oxygen" value="Yes">
-                        <label for="yes">Yes</label><br>
-                        <input type="radio" id="no" name="oxygen" value="No">
-                        <label for="no">NO</label><br>  
-
-                        <br>
+    <br>
 
                         
-                        <p>ICU</p>
-                        <input type="radio" id="test1" name="icu" value="Yes">
-                        <label for="test1">Yes</label><br>
-                        <input type="radio" id="test2" name="icu" value="No">
-                        <label for="test2">NO</label><br> 
+     <p>ICU</p>
+    <input type="radio" id="test1" name="icu" value="Yes">
+    <label for="test1">Yes</label><br>
+    <input type="radio" id="test2" name="icu" value="No">
+    <label for="test2">NO</label><br> 
 
-                        <!-- <p>ICU:</p>
-                          <input type="radio" id="yes" name="fav_language" value="YES">
-                          <label for="html">YES</label>
-                        <input type="radio" id="no" name="fav_language" value="NO">
-                          <label for="no">NO</label><br> -->
+                      
 
-                        <div class="mb-3">
-                            <label for="vehicle_number" class="form-label">Vehicle Number</label>
-                            <input name="vehicle_number" type="text" class="form-control" id="vehicle_number"
-                                placeholder="Vehicle_Number">
-                        </div>
-                        <div class="mb-3">
-                            <label for="location" class="form-label">Location</label>
-                           
-                        <select type="text" id="cf-3" placeholder="Location" class="form-control px-3"
-                        name="location_id">
-                                @foreach($locations as $location)
-                      <option value="{{$location->id}}">
-                        {{$location->name}}
-                      </option>
-
-                      @endforeach
-                      </select>
-                        </div>
-                        <!-- test2 end -->
-                        <!-- test3-->
-
-                        <div class="modal-header">
-                            <h6 class="modal-title" id="Owner">Driver Information</h6>
-                        </div>
-                        <div class="mb-3">
-                            <label for="driver_name" class="form-label">Driver Name</label>
-                            <input name="driver_name" type="text" class="form-control" id="driver_name"
-                                placeholder="Driver_Name">
-                        </div>
-                        <div class="mb-3">
-                            <label for="driver_email" class="form-label">Driver Email</label>
-                            <input name="driver_email" type="text" class="form-control" id="driver_email"
-                                placeholder="Driver_Email">
-                        </div>
-                        <div class="mb-3">
-                            <label for="driving_license" class="form-label">Driving Licencse</label>
-                            <input name="driving_license" type="text" class="form-control" id="driving_license"
-                                placeholder="Driving_License">
-                        </div>
-                        <div class="mb-3">
-                            <label for="phone_number" class="form-label">Phone Number</label>
-                            <input name="phone_number" type="text" class="form-control" id="phone_number"
-                                placeholder="Phone_Number">
-                        </div>
-                        <div class="mb-3">
-                            <label for="nid_number" class="form-label">NID Number</label>
-                            <input name="nid_number" type="text" class="form-control" id="nid_number"
-                                placeholder="NID_Number">
-                        </div>
-                        <div class="mb-3">
-                            <label for="address" class="form-label">Address</label>
-                            <input name="address" type="text" class="form-control" id="address" placeholder="Address">
-                        </div>
-                        <!-- test3 end-->
-
-
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-
-                    </form>
-            </div>
-
-        </div>
+    <div class="mb-3">
+    <label for="vehicle_number" class="form-label">Vehicle Number</label>
+    <input name="vehicle_number" type="text" class="form-control" id="vehicle_number" placeholder="Vehicle_Number">
     </div>
-</div>
+
+    <div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+                           
+    <select type="text" id="cf-3" placeholder="Location" class="form-control px-3" name="location_id">
+                               
+    @foreach($locations as $location)
+        <option value="{{$location->id}}">
+             {{$location->name}}
+        </option>
+
+     @endforeach
+    </select>
+    </div>
+    <!-- test2 end -->
+
+     <!-- test3-->
+
+     <div class="modal-header">
+    <h6 class="modal-title" id="Owner">Driver Information</h6>
+    </div>
+
+     <div class="mb-3">
+     <label for="driver_name" class="form-label">Driver Name</label>
+     <input name="driver_name" type="text" class="form-control" id="driver_name" placeholder="Driver_Name">
+        </div>
+
+    <div class="mb-3">
+     <label for="driver_email" class="form-label">Driver Email</label>
+    <input name="driver_email" type="text" class="form-control" id="driver_email" placeholder="Driver_Email">
+     </div>
+
+      <div class="mb-3">
+    <label for="driving_license" class="form-label">Driving Licencse</label>
+     <input name="driving_license" type="text" class="form-control" id="driving_license" placeholder="Driving_License">
+        </div>
+        <div class="mb-3">
+    <label for="phone_number" class="form-label">Phone Number</label>
+     <input name="phone_number" type="text" class="form-control" id="phone_number" placeholder="Phone_Number">
+        </div>
+
+     <div class="mb-3">
+ <label for="nid_number" class="form-label">NID Number</label>
+    <input name="nid_number" type="text" class="form-control" id="nid_number" placeholder="NID_Number">
+     </div>
+
+     <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+    <input name="address" type="text" class="form-control" id="address" placeholder="Address">
+  </div>
+         <!-- test3 end-->
+
+     <button type="submit" class="btn btn-primary">Submit</button>
+
+ </form>
+     </div>
+     </div>
+      </div>
+       </div>
 @endsection

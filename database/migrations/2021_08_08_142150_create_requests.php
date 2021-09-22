@@ -15,10 +15,9 @@ class CreateRequests extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->id();
-            $table->string('name',100);
-            $table->string('service_id',100);
-            $table->string('user_id',100);
-            $table->string('status',10)->default('active');
+            $table->integer('ambulance_id');
+            $table->integer('user_id');
+            $table->string('status',10)->default('pending');
             $table->timestamps();
         });
     }

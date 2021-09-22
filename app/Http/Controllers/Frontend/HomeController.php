@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Location;
 use App\Models\Ambulance;
+use App\Models\Request as SendRequest;
 
 class HomeController extends Controller
 {
@@ -27,5 +28,17 @@ class HomeController extends Controller
         $ambulance = Ambulance::whereBetween('location_id',[$from_location,$to_location])->get();
 
         return view('frontend.layouts.ambulanceList',compact('ambulance'));
+    }
+
+    public function sendrequest(Request $request)
+    {
+        SendRequest::create([
+            'user_id' => auth()->user()->id,
+            'ambulance_id' => $request->ambulance_id,
+            'status' => 'pending'
+        ]);
+        return redirect()->back();
+
+        
     }
 }

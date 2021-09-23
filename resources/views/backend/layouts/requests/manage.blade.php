@@ -326,16 +326,17 @@ body{
     
         <div class="card card-margin">
 
- <div class="card-header no-border">
-    <h5 class="card-title">Ambulance</h5>
-</div>
+ 
     <div>
     <div>
     <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">Ambulance ID</th>
+      <th scope="col">Ambulance Name</th>
+      <th scope="col">Vehicle Number</th>
+      <th scope="col">Type</th>
+      <th scope="col">Driver Name</th>
       <th scope="col">User ID</th>
     </tr>
   </thead>
@@ -344,7 +345,10 @@ body{
         <th scope="row">{{$data->id}}</th>
                
         <td>{{$data->ambulance->owner_name}}</td>
-       <td>{{$data->user_id}}</td>
+        <td>{{$data->ambulance->vehicle_number}}</td>
+        <td>{{$data->ambulance->type}}</td>
+        <td>{{$data->ambulance->driver_name}}</td>
+       <td>{{$data->user->name}}</td>
               
 </tr>
 @endforeach     

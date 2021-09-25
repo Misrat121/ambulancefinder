@@ -12,6 +12,7 @@ use App\Http\Controllers\Backend\AmbulanceController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
 use App\Http\Controllers\Frontend\AmbulanceController as FrontendAmbulance;
 use App\Http\Controllers\Frontend\UserController;
+use App\Http\Controllers\Frontend\DriverController;
 use App\Http\Controllers\Frontend\AboutController;
 
 use Illuminate\Support\Facades\Route;
@@ -47,7 +48,11 @@ Route::get('/signup',[UserController::class,'signupForm'])->name('user.signup');
 Route::post('/signup/store',[UserController::class,'signupFormPost'])->name('user.signup.store');
 
 
-// Driver signup
+Route::get('/driversignup',[UserController::class,'driversignupForm'])->name('driver.signup');
+Route::post('/driversignup/store',[UserController::class,'driversignupFormPost'])->name('driver.signup.store');
+
+
+// Driver 
 Route::get('/driver/signup',[UserController::class,'driversignupForm'])->name('driver.signup');
 
 
@@ -57,6 +62,16 @@ Route::get('/sendrequest',[FrontendHome::class,'sendrequest'])->name('sendreques
 });
 
 
+// Driver signup
+
+
+Route::group(['prefix'=>'driver','middleware'=>'driver'],function (){
+    // Route::get('/driverlogin',[UserController::class,'driverlogin'])->name('driver.login');
+    Route::post('/driverlogin/post',[UserController::class,'driverdoLogin'])->name('driver.do.login');
+    Route::get('/driver',[DriverController::class,'driver'])->name('driver');
+  
+
+});
 
 //admin panel routes
 
@@ -82,8 +97,7 @@ Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
 
     Route::get('/locations',[LocationController::class,'list'])->name('location.list');
     Route::post('/locations/store',[LocationController::class,'store'])->name('location.store');
-    // Route::get('/registeredusers',[RegisteredUserController::class,'list'])->name('registeredusers.list');
-    // Route::post('/registeredusers/store',[RegisteredUserController::class,'store'])->name('registeredusers.store');
+   
     Route::get('/users',[BackendUser::class,'list'])->name('users.list');
     Route::post('/users/store',[BackendUser::class,'store'])->name('users.store');
     

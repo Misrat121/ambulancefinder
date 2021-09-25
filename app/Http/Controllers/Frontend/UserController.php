@@ -36,10 +36,8 @@ class UserController extends Controller
 
          return redirect()->back()->with('success','User Registration Successful.');
      }
-     public function driversignupForm()
-    {
-        return view('frontend.layouts.driversignup');
-    }
+
+     
 
     public function login()
     {
@@ -53,17 +51,70 @@ class UserController extends Controller
         //   dd(Auth::attempt($credentials));
         if(Auth::attempt($credentials))
         {
-            return redirect()->route('home');
+            if(auth()->user()->role=='driver')
+           {
+            return redirect()->route('driver');
+           } else
+           {
+              
+               return redirect()->route('home');
+           }
             //user logged in
         }
         return redirect()->back()->with('message','invalid user info.');
     }
+
     public function logout()
     {
         Auth::logout();
         return redirect()->route('user.login');
     }
+    public function driversignupForm()
+    {
+        return view('frontend.layouts.driversignup');
+    }
 
+    public function driversignupFormPost(Request $request)
+    {
+
+        
+                //    dd($request->all());
+                    $request->validate([
+                        'user_name'=>'required',
+                        'email'=>'required|email|unique:users,email',
+                        'password'=>'required|min:6',
+                        'mobile'=>'required'
+                    ]);
+            
+        User::create([
+            'name'=>$request->user_name,
+            'mobile'=>$request->mobile,
+            'role'=>'driver',
+
+            'email'=>$request->email,
+            'password'=>bcrypt($request->password),
+         ]);
+
+         return redirect()->back()->with('success','Driver Registration Successful.');
+     }
+
+     public function driverlogin()
+    {
+        return view('frontend.layouts.login');
+    }
+    //public function driverdoLogin(Request $request)
+    // {
+    //     // dd($request->all());
+    //     $credentials=$request->except('_token');
+    //       dd(Auth::attempt($credentials));
+    //     if(Auth::attempt($credentials))
+    //     {
+    //         dd("ok");
+    //         return redirect()->route('driver');
+    //         //user logged in
+    //     }
+    //     return redirect()->back()->with('message','invalid user info.');
+    // }
 
 }
 

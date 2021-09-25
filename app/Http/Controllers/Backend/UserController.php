@@ -24,7 +24,7 @@ class UserController extends Controller
             {
                 return redirect()->route('dashboard');
             }
-            else
+           else
             {
                 Auth::logout();
                 return redirect()->route('user.signup');

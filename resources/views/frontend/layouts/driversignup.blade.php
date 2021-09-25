@@ -26,8 +26,8 @@
 
 
             
-            <!-- <form action="{{route('driver.signup.store')}}" type="form" method="Post">
-                @csrf -->
+            <form action="{{route('driver.signup.store')}}" type="form" method="Post">
+                @csrf
            
                 <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
@@ -36,17 +36,17 @@
 
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email address</label>
-                    <input required name="driver_email" placeholder="Enter your email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input required name="email" placeholder="Enter your email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                 </div>
 
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input required name="driver_password" placeholder="Enter your password" type="password" class="form-control" id="exampleInputPassword1">
+                    <input required name="password" placeholder="Enter your password" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
 
                 <div class="mb-3">
                     <label for="mobile" class="form-label">Mobile</label>
-                    <input required name="driver_mobile" placeholder="Enter your mobile number" type="text" class="form-control" id="mobile" >
+                    <input required name="mobile" placeholder="Enter your mobile number" type="text" class="form-control" id="mobile" >
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit</button>

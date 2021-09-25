@@ -21,7 +21,8 @@ class LocationController extends Controller
     ]); 
     return redirect()->back();
 
-}
+   }
+   
 
 }
     

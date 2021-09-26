@@ -1,6 +1,8 @@
 @extends('frontend.master')
 @section('contents')
+
 <style type="text/css" >
+
 body{
     background:#b3e0f2;
     
@@ -316,28 +318,26 @@ body{
 
 </style>
 <br><br><br><br>
+
 <div class="container">
 <div class="row">
 
-
-  
     <div class="col-lg-12">
        <!-- loop here -->   
     
         <div class="card card-margin">
-
- 
-    <div>
     <div>
     <table class="table">
   <thead>
     <tr>
       <th scope="col">ID</th>
-      <th scope="col">User ID</th>
+      <th scope="col">User Name</th>
       <th scope="col">Pickup Point</th>
       <th scope="col">Destination</th>
       <th scope="col">Type</th>
       <th scope="col">Vehicle Number</th>
+      <th scope="col">Cost</th>
+    
       <th scope="col">Status</th>
     </tr>
   </thead>
@@ -345,28 +345,25 @@ body{
   @foreach($request as $data)
   <tr>
         <th scope="row">{{$data->id}}</th>
-        <td>{{$data->ambulance->user_id}}</td>
+        <td>{{$data->user->name}}</td>
         <td>{{$data->fromLocation->name}}</td>
         <td>{{$data->toLocation->name}}</td>
         <td>{{$data->ambulance->type}}</td>
         <td>{{$data->ambulance->vehicle_number}}</td>
-      
-       
-              
+        
+      <!-- <input type="number" id="frame" name="cost" value=""> <br> -->
 </tr>
 @endforeach     
   
-  </tbody>
-  </table>
-
-
-</div>
+      </tbody>
+     </table>
+    </div>
            
-</div>
+  </div>
 
-</div>
+  </div>
    
-</div>
+ </div>
 </div>
 @endsection
 

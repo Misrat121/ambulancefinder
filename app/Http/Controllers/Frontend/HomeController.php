@@ -27,13 +27,16 @@ class HomeController extends Controller
     
         $ambulance = Ambulance::whereBetween('location_id',[$from_location,$to_location])->get();
 
-        return view('frontend.layouts.ambulanceList',compact('ambulance'));
+        return view('frontend.layouts.ambulanceList',compact('ambulance','from_location','to_location'));
     }
 
     public function sendrequest(Request $request)
     {
+        // dd($request->all());
         SendRequest::create([
             'user_id' => auth()->user()->id,
+            'from_location' => $request->from_location,
+            'to_location' => $request->to_location,
             'ambulance_id' => $request->ambulance_id,
             'status' => 'pending'
         ]);

@@ -20,5 +20,15 @@ class Request extends Model
     {
         return $this->belongsTo(User::class,'user_id','id');
     }
+
+
+    public function fromLocation()
+    {
+        return $this->belongsTo(Location::class,'from_location','id');
+    }
+    public function toLocation()
+    {
+        return $this->belongsTo(Location::class,'to_location','id');
+    }
     
 }

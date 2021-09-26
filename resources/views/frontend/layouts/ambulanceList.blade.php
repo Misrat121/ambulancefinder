@@ -135,7 +135,10 @@ img {
   <div class="mb-3">
      <span class="mr-2 d-block d-sm-inline-block mb-2 mb-sm-0">{{$data->owner_name}}</span>
      </div>
+
      <input type="hidden" value="{{$data->id}}" name="ambulance_id">
+     <input type="hidden" value="{{$from_location}}" name="from_location">
+     <input type="hidden" value="{{$to_location}}" name="to_location">
  <button Type="submit" class="btn btn-dark">Send Request</button>
          </div>
     </div>

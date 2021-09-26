@@ -23,12 +23,7 @@
       </a>
     </li>
          
-  <li class="nav-item">
-    <a class="nav-link" href="{{route('stations.list')}}">
-      <span data-feather="file"></span>
-     Stations
-    </a>
-  </li>
+ 
 
     <li class="nav-item">
       <a class="nav-link" href="{{route('location.list')}}">
@@ -38,12 +33,7 @@
     </li>
           
           
-   <li class="nav-item">
-   <a class="nav-link" href="#">
-    <span data-feather="shopping-cart"></span>
-      Manage Query
-       </a>
-    </li>
+  
          
    <li class="nav-item">
    <a class="nav-link" href="{{route('users.list')}}">
@@ -58,16 +48,18 @@
       Patient
       </a>
     </li>
-      <li class="nav-item">
-    <a class="nav-link" href="{{route('registereddrivers.list')}}">
-    <span data-feather="users"></span>
-    Registered Drivers
-      </a>
-    </li>
+     
      <li class="nav-item">
       <a class="nav-link" href="{{route('requests.manage')}}">
        <span data-feather="bar-chart-2"></span>
         Requests
+        </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="#">
+       <span data-feather="bar-chart-2"></span>
+        Reports
         </a>
     </li>
   </ul>

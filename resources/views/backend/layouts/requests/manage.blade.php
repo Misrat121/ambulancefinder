@@ -340,6 +340,7 @@ body{
       <th scope="col">User ID</th>
     </tr>
   </thead>
+  <tbody>
   @foreach($request as $data)
   <tr>
         <th scope="row">{{$data->id}}</th>

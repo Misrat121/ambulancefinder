@@ -336,15 +336,14 @@ body{
       <th scope="col">Destination</th>
       <th scope="col">Type</th>
       <th scope="col">Vehicle Number</th>
+      <th scope="col">Driver Name</th>
       <th scope="col">Cost</th>
-      <th scope="col"></th>
-      <th scope="col">Status</th>
+     
  
     </tr>
   </thead>
   <tbody>
   @foreach($request as $data)
-  
   <tr>
         <th scope="row">{{$data->id}}</th>
         <td>{{$data->user->name}}</td>
@@ -352,13 +351,12 @@ body{
         <td>{{$data->toLocation->name}}</td>
         <td>{{$data->ambulance->type}}</td>
         <td>{{$data->ambulance->vehicle_number}}</td>
-      
-        <form class="trip-form" action="{{route('cost.update', $data->ambulance->id)}}" method="post">
-          @csrf
-      <td><input type="number" id="frame" name="cost" value="" style="width: 8rem; padding-right: 20px;"> </td>
-     <td> <button type="submit" class="btn btn-primary">Submit</button></td>
-</form>
-<td>{{$data->status }}</td>
+        <td>{{$data->ambulance->driver_name}}</td>
+        <td>{{$data->ambulance->cost}}</td>
+           <td> <a href="{{route('request.accept',$data->id)}}" class="btn btn-primary">Accept</a></td>
+        
+     
+    
 </tr>
 @endforeach     
   

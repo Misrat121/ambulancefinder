@@ -49,17 +49,7 @@ class UserController extends Controller
         $user=User::all();
         return view('backend.layouts.user.list',compact('user'));
     }
-    // public function store(Request $request)
-    // {
-    //    User::create([
-    //     'name'=>$request->user_name,
-    //     'phone_number'=>$request->phone_number,
-    //     'email'=>$request->user_email,
-    //    ]);
    
-    //    return redirect()->back();
-    // }
-
     public function patientlist()
     {
         $user=User::where('role','=','patient')->get();

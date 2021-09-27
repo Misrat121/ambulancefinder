@@ -45,4 +45,41 @@ class HomeController extends Controller
 
         
     }
+
+    public function acceptRequest($id)
+    {
+        $request=SendRequest::find($id);
+        $request->update([
+            'status'=>'accepted'
+        ]);
+
+        return redirect()->back();
+
+    }
+
+    public function passenger()
+    {
+        
+
+        if(auth()->user()->role=='driver')
+        {
+            $request = SendRequest::all();
+        }else
+        {
+            $request = SendRequest::where('user_id',auth()->user()->id)->get();
+        }
+      
+        return view('frontend.layouts.passenger',compact('request'));
+    }
+public function costUpdate(Request $request, $id)
+{
+    $ambulances=Ambulance::find($id);
+    $ambulances->update([
+        'cost'=>$request->cost
+    ]);
+    return redirect()->back();
+}
+    
+
+
 }

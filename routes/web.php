@@ -33,6 +33,12 @@ Route::get('/ambulanceList',[FrontendHome::class,'ambulanceList'])->name('ambula
 Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
 Route::get('/about',[AboutController::class,'about'])->name('about');
 
+Route::post('/cost/{id}',[FrontendHome::class,'costUpdate'])->name('cost.update');
+
+Route::get('/accepted/{id}',[FrontendHome::class,'acceptRequest'])->name('request.accept');
+
+Route::get('/passenger',[FrontendHome::class,'passenger'])->name('passenger');
+Route::post('/passenger/post',[FrontendHome::class,'passengerprofile'])->name('passenger.profile');
 // //login here
 Route::get('/login',[UserController::class,'login'])->name('user.login');
 Route::post('/login/post',[UserController::class,'doLogin'])->name('user.do.login');

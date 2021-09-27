@@ -102,6 +102,9 @@ class UserController extends Controller
     {
         return view('frontend.layouts.login');
     }
+
+    
+
     //public function driverdoLogin(Request $request)
     // {
     //     // dd($request->all());

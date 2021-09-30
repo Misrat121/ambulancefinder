@@ -103,22 +103,6 @@ class UserController extends Controller
         return view('frontend.layouts.login');
     }
 
-    
-
-    //public function driverdoLogin(Request $request)
-    // {
-    //     // dd($request->all());
-    //     $credentials=$request->except('_token');
-    //       dd(Auth::attempt($credentials));
-    //     if(Auth::attempt($credentials))
-    //     {
-    //         dd("ok");
-    //         return redirect()->route('driver');
-    //         //user logged in
-    //     }
-    //     return redirect()->back()->with('message','invalid user info.');
-    // }
-
 }
 
 

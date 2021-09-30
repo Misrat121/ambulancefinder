@@ -10,7 +10,7 @@
     </li>
 
     <li class="nav-item">
-  <a class="nav-link active" aria-current="page" href="#">
+  <a class="nav-link active" aria-current="page" href="{{route('dashboard')}}">
     <span data-feather="home"></span>
      Dashboard
       </a>
@@ -18,7 +18,8 @@
 
   <li class="nav-item">
     <a class="nav-link" href="{{route('ambulances.list')}}">
-    <span data-feather="file"></span>
+    <i class="fa fa-ambulance" aria-hidden="true"></i>
+  
       Ambulances
       </a>
     </li>
@@ -27,24 +28,21 @@
 
     <li class="nav-item">
       <a class="nav-link" href="{{route('location.list')}}">
-        <span data-feather="file"></span>
+      <i class="fa fa-location-arrow"></i>
       Location
       </a>
     </li>
-          
-          
-  
-         
+
    <li class="nav-item">
    <a class="nav-link" href="{{route('users.list')}}">
-  <span data-feather="shopping-cart"></span>
+   <i class='fas fa-user-alt'></i>
       Users
       </a>
       </li>
 
   <li class="nav-item">
     <a class="nav-link" href="{{route('patient.list')}}">
-      <span data-feather="shopping-cart"></span>
+    <i class='fas fa-user-alt'></i>
       Patient
       </a>
     </li>
@@ -57,8 +55,8 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" href="#">
-       <span data-feather="bar-chart-2"></span>
+      <a class="nav-link" href="{{route('report')}}">
+      <i class="material-icons"></i>
         Reports
         </a>
     </li>

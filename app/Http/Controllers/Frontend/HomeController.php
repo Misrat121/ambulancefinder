@@ -25,23 +25,29 @@ class HomeController extends Controller
         $from_location = $request->from_location;
         $to_location = $request->to_location;
     
-        $ambulance = Ambulance::whereBetween('location_id',[$from_location,$to_location])->get();
+        $ambulance = Ambulance::whereIn('location_id',[$from_location,$to_location])->get();
 
         return view('frontend.layouts.ambulanceList',compact('ambulance','from_location','to_location'));
     }
 
     public function sendrequest(Request $request)
     {
+        $sendRequest = SendRequest::where('ambulance_id',$request->ambulance_id)->first();
+        if($sendRequest){
+            return redirect()->back()->with('message','This ride is booked.');
+        }else{
+            SendRequest::create([
+                'user_id' => auth()->user()->id,
+                'from_location' => $request->from_location,
+                'to_location' => $request->to_location,
+                'ambulance_id' => $request->ambulance_id,
+                'status' => 'pending'
+            ]);
+            
+            return redirect()->back();
+        }
         // dd($request->all());
-        SendRequest::create([
-            'user_id' => auth()->user()->id,
-            'from_location' => $request->from_location,
-            'to_location' => $request->to_location,
-            'ambulance_id' => $request->ambulance_id,
-            'status' => 'pending'
-        ]);
         
-        return redirect()->back();
 
         
     }
@@ -79,7 +85,20 @@ public function costUpdate(Request $request, $id)
     ]);
     return redirect()->back();
 }
+
+public function completeRide($id)
+
+{
     
+    $request=SendRequest::find($id);
+    // dd($request);
+    $request->update([
+        'is_complete'=>'completed'
+    ]);
+
+    return redirect()->back()->with('message','Ride is completed.');
+
+}
 
 
 }

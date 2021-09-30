@@ -331,7 +331,7 @@ body{
     <div>
     <table class="table">
   <thead>
-    <tr>
+    <tr class="table-secondary">
       <th scope="col">ID</th>
       <th scope="col">Ambulance Name</th>
       <th scope="col">Vehicle Number</th>
@@ -343,13 +343,13 @@ body{
   <tbody>
   @foreach($request as $data)
   <tr>
-        <th scope="row">{{$data->id}}</th>
+        <th class="table-warning" scope="row">{{$data->id}}</th>
                
-        <td>{{$data->ambulance->owner_name}}</td>
-        <td>{{$data->ambulance->vehicle_number}}</td>
-        <td>{{$data->ambulance->type}}</td>
-        <td>{{$data->ambulance->driver_name}}</td>
-       <td>{{$data->user->name}}</td>
+        <td class="table-warning">{{$data->ambulance->owner_name}}</td>
+        <td class="table-warning">{{$data->ambulance->vehicle_number}}</td>
+        <td class="table-warning">{{$data->ambulance->type}}</td>
+        <td class="table-warning">{{$data->ambulance->driver_name}}</td>
+       <td class="table-warning">{{$data->user->name}}</td>
               
 </tr>
 @endforeach     

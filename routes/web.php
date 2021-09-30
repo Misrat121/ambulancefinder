@@ -30,12 +30,13 @@ Route::get('/',[FrontendHome::class,'home'])->name('home');
 
 Route::get('/search',[FrontendHome::class,'search'])->name('search');
 Route::get('/ambulanceList',[FrontendHome::class,'ambulanceList'])->name('ambulanceList');
-Route::get('/ambulance',[FrontendAmbulance::class,'ambulance'])->name('ambulance');
+
 Route::get('/about',[AboutController::class,'about'])->name('about');
 
 Route::post('/cost/{id}',[FrontendHome::class,'costUpdate'])->name('cost.update');
 
 Route::get('/accepted/{id}',[FrontendHome::class,'acceptRequest'])->name('request.accept');
+Route::get('/completed/{id}',[FrontendHome::class,'completeRide'])->name('ride.complete');
 
 Route::get('/passenger',[FrontendHome::class,'passenger'])->name('passenger');
 Route::post('/passenger/post',[FrontendHome::class,'passengerprofile'])->name('passenger.profile');
@@ -64,11 +65,13 @@ Route::get('/driver',[DriverController::class,'driver'])->name('driver');
   });
 
 //admin panel routes
+
 Route::get('/admin/login',[BackendUser::class,'login'])->name('admin.login');
 Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.login.post');
 Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
  
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
+Route::get('/booking',[HomeController::class,'report'])->name('report');
 Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 
 Route::get('/ambulances',[AmbulanceController::class,'list'])->name('ambulances.list');
@@ -83,6 +86,7 @@ Route::get('/requests/manage',[RequestsController::class,'manage'])->name('reque
 Route::get('/updateinfo/update',[UpdateInfoController::class,'update'])->name('updateinfo.update');
 Route::get('/patients',[BackendUser::class,'patientlist'])->name('patient.list');
 
+Route::get('/',[HomeController::class,'home'])->name('dashboard');
  });
 
 

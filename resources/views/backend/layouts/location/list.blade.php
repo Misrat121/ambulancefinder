@@ -12,7 +12,7 @@
 
 <table class="table">
   <thead>
-    <tr>
+    <tr class="table-danger">
       <th scope="col">ID</th>
       <th scope="col">Name</th>
       <th scope="col">Status</th>   
@@ -23,8 +23,8 @@
         {{--@dd($locations)--}}
         @foreach($locations as $location)
         <tr>
-            <td>{{$loop->iteration}}</td>
-            <td>{{$location->name}}</td>
+            <td  class="table-success">{{$loop->iteration}}</td>
+            <td  class="table-success">{{$location->name}}</td>
             </tr>
         @endforeach
 

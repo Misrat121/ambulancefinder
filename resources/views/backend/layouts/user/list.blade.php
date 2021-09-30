@@ -11,7 +11,7 @@
 
 <table class="table">
     <thead>
-    <tr>
+    <tr class="table-warning">
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Phone Number</th>
@@ -23,11 +23,11 @@
     <tbody>
         @foreach($user as $use)
             <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$use->name}}</td>
-                <td>{{$use->mobile}}</td>
-                <td>{{$use->role}}</td>
-                <td>{{$use->email}}</td>
+                <td class="table-success">{{$loop->iteration}}</td>
+                <td class="table-success">{{$use->name}}</td>
+                <td class="table-success">{{$use->mobile}}</td>
+                <td class="table-success">{{$use->role}}</td>
+                <td class="table-success">{{$use->email}}</td>
             </tr>
         @endforeach
     </tbody>

@@ -20,6 +20,7 @@ class CreateRequests extends Migration
             $table->integer('to_location');
             $table->integer('user_id');
             $table->string('status',10)->default('pending');
+            $table->string('is_complete',10)->default('pending');
             $table->timestamps();
         });
     }

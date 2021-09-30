@@ -329,7 +329,7 @@ body{
     <div>
     <table class="table">
   <thead>
-    <tr>
+    <tr class="table-danger">
       <th scope="col">ID</th>
       <th scope="col">User Name</th>
       <th scope="col">Pickup Point</th>
@@ -339,6 +339,7 @@ body{
       <th scope="col">Cost</th>
       <th scope="col"></th>
       <th scope="col">Status</th>
+      <th scope="col">Is Complete?</th>
  
     </tr>
   </thead>
@@ -346,19 +347,20 @@ body{
   @foreach($request as $data)
   
   <tr>
-        <th scope="row">{{$data->id}}</th>
-        <td>{{$data->user->name}}</td>
-        <td>{{$data->fromLocation->name}}</td>
-        <td>{{$data->toLocation->name}}</td>
-        <td>{{$data->ambulance->type}}</td>
-        <td>{{$data->ambulance->vehicle_number}}</td>
+        <th  class="table-warning" scope="row">{{$data->id}}</th>
+        <td class="table-warning">{{$data->user->name}}</td>
+        <td  class="table-warning">{{$data->fromLocation->name}}</td>
+        <td class="table-warning">{{$data->toLocation->name}}</td>
+        <td  class="table-warning">{{$data->ambulance->type}}</td>
+        <td  class="table-warning">{{$data->ambulance->vehicle_number}}</td>
       
         <form class="trip-form" action="{{route('cost.update', $data->ambulance->id)}}" method="post">
           @csrf
-      <td><input type="number" id="frame" name="cost" value="" style="width: 8rem; padding-right: 20px;"> </td>
-     <td> <button type="submit" class="btn btn-primary">Submit</button></td>
+      <td  class="table-warning"><input type="number" id="frame" name="cost" value="" style="width: 8rem; padding-right: 20px;"> </td>
+     <td  class="table-warning"> <button type="submit" class="btn btn-primary">Submit</button></td>
 </form>
-<td>{{$data->status }}</td>
+<td class="table-warning">{{$data->status }}</td>
+<td  class="table-warning"> <a href="{{route('ride.complete',$data->id) }}" class="btn btn-primary">{{$data->is_complete}}</a></td>
 </tr>
 @endforeach     
   

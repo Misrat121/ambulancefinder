@@ -15,7 +15,8 @@
     @endif
 <table class="table">
     <thead>
-        <tr>
+        <tr  class="table-success">
+        
             <th scope="col">ID</th>
             <th scope="col">Owner Name</th>
             <th scope="col">Contact Number</th>

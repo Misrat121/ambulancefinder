@@ -329,7 +329,7 @@ body{
     <div>
     <table class="table">
   <thead>
-    <tr>
+    <tr class="table-danger">
       <th scope="col">ID</th>
       <th scope="col">User Name</th>
       <th scope="col">Pickup Point</th>
@@ -337,23 +337,24 @@ body{
       <th scope="col">Type</th>
       <th scope="col">Vehicle Number</th>
       <th scope="col">Driver Name</th>
+      <th scope="col">Phone Number</th>
       <th scope="col">Cost</th>
-     
- 
-    </tr>
+      <th scope="col"></th>
+     </tr>
   </thead>
   <tbody>
   @foreach($request as $data)
   <tr>
-        <th scope="row">{{$data->id}}</th>
-        <td>{{$data->user->name}}</td>
-        <td>{{$data->fromLocation->name}}</td>
-        <td>{{$data->toLocation->name}}</td>
-        <td>{{$data->ambulance->type}}</td>
-        <td>{{$data->ambulance->vehicle_number}}</td>
-        <td>{{$data->ambulance->driver_name}}</td>
-        <td>{{$data->ambulance->cost}}</td>
-           <td> <a href="{{route('request.accept',$data->id)}}" class="btn btn-primary">Accept</a></td>
+        <th  class="table-secondary" scope="row">{{$data->id}}</th>
+        <td  class="table-secondary">{{$data->user->name}}</td>
+        <td  class="table-secondary">{{$data->fromLocation->name}}</td>
+        <td  class="table-secondary">{{$data->toLocation->name}}</td>
+        <td  class="table-secondary">{{$data->ambulance->type}}</td>
+        <td  class="table-secondary">{{$data->ambulance->vehicle_number}}</td>
+        <td  class="table-secondary">{{$data->ambulance->driver_name}}</td>
+        <td  class="table-secondary">{{$data->ambulance->phone_number}}</td>
+        <td  class="table-secondary">{{$data->ambulance->cost}}</td>
+        <td  class="table-secondary"> <a href="{{route('request.accept',$data->id)}}" class="btn btn-primary">Accept</a></td>
         
      
     

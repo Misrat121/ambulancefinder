@@ -1,5 +1,5 @@
 <header class="site-navbar site-navbar-target" role="banner">
-
+<nav class="navbar navbar-expand-lg navbar-light ftco_navbar bg-secondary ftco-navbar-secondary" id="ftco-navbar">
 <div class="container">
   <div class="row align-items-center position-relative">
 
@@ -17,7 +17,7 @@
         <ul class="site-menu main-menu js-clone-nav ml-auto ">
           <li class="active"><a href="{{route('home')}}" class="nav-link">Home</a></li>
           <li><a href="{{route('about')}}" class="nav-link">About</a></li>
-          <li><a href="{{route('ambulance')}}" class="nav-link">Ambulance</a></li>
+          
           @if(auth()->user())
                         <a class="nav-item nav-link" href="{{route('user.logout')}}">Logout</a>
                         <a class="nav-item nav-link" href="{{route('passenger')}}">{{auth()->user()->name}}</a>

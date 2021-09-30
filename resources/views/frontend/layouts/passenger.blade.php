@@ -5,6 +5,7 @@
 
 body{
     background:#b3e0f2;
+    /* background-image:url('frontend/images/banner-image.png'); */
     
     margin-top:20px;
 }

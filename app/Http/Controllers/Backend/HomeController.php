@@ -25,10 +25,10 @@ class HomeController extends Controller
    
     public function report()
     {
-        $booking=Request::with(['user','ambulance'])->get();
-//        dd($booking);
+        $ambulance=Request::with(['user','ambulance'])->get();
+//        dd($ambulance);
 
-        return view('backend.layouts.report-data',compact('booking'));
+        return view('backend.layouts.report-data',compact('ambulance'));
 
     }
 }

@@ -71,7 +71,7 @@ Route::post('/admin/login/post',[BackendUser::class,'loginPost'])->name('admin.l
 Route::group(['prefix'=>'admin','middleware'=>['auth','role']],function(){
  
 Route::get('/',[HomeController::class,'home'])->name('dashboard');
-Route::get('/booking',[HomeController::class,'report'])->name('report');
+Route::get('/report',[HomeController::class,'report'])->name('report');
 Route::get('/logout',[BackendUser::class,'logout'])->name('logout');
 
 Route::get('/ambulances',[AmbulanceController::class,'list'])->name('ambulances.list');

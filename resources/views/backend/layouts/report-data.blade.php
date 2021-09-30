@@ -9,7 +9,7 @@
 </button>
     </div>
         <div id="printableArea">
-            <h1>Booking List</h1>
+            <h1>Request List</h1>
     @if(session()->has('message'))
         <div class="row" style="padding: 10px;">
             <span class="alert alert-success">{{session()->get('message')}}</span>
@@ -27,7 +27,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($booking as $key=>$data)
+        @foreach($ambulance as $key=>$data)
         <tr>
             <th scope="row">{{$key+1}}</th>
             <td>
